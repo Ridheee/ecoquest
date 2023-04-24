@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Find the Hidden Object</title>
+  <style>
+    *{
+        margin: 0;
+        align-items: center;
+        margin-top: 10px;
+        background-color: black;
+        color: white;
+  
+    }
+    h1{
+        text-align: center;
+        border: 1px solid white;
+        background-color: rgb(9, 59, 71);
+    }
+    .content{
+        text-align: justify;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+        
+        font-family: monospace;
+        padding: 20px;
+        font-size: 20px;
+    }
+    .content p{
+        flex: 50%;
+        padding-right: 20px;
+    }
+    .content div{
+        flex: 50%;
+    }
+    #game {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      margin: auto;
+      
+      background: url(img/water1.jpg) no-repeat center center;
+      background-size: cover;
+    }
+    #object {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: url(img/waterhint.png) no-repeat center center;
+      background-size: cover;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+    <h1>WATER</h1>
+    <div class="content">
+    <p> For many of us, clean water is so plentiful and readily available that we rarely,
+        if ever, pause to consider what life would be like without it. However more than a billion people lack adequate access to clean water.
+        If we have to control water pollution, we will have to find out a way out, and devise laws and strategies. Treating the poisonous substances and discharge materials and
+        toxic substances coming out of the homes and factories before discharging them, throwing garbage in dustbins only, not wasting water unjustly can be 
+        a few control measures that we can take as individuals.
+        <br><br> <b>Your task is to solve the riddle and spot the hidden pollutant:<br><br>
+            I am something that you use every day,<br>
+            But when I'm disposed of, I don't go away.<br>
+            I'm not metal, nor paper, nor cloth,<br>
+            I'm something that's light, and I'm something that's soft.
+        </b>
+    </p>
+  <div id="game">
+    <div id="object"></div>
+  </div>
+</div>
+  <script>
+    // Get the game and object elements
+    var game = document.getElementById("game");
+    var object = document.getElementById("object");
+    // Generate a random x and y coordinate within the game container
+    var x = Math.floor(Math.random() * (game.offsetWidth - object.offsetWidth));
+    var y = Math.floor(Math.random() * (game.offsetHeight - object.offsetHeight));
+    // Set the object's position to the random x and y coordinate
+    object.style.left = x + "px";
+    object.style.top = y + "px";
+    // Add a click event listener to the object element
+    object.addEventListener("click", function() {
+        
+      var msg="Congratulations! You found the hidden object. Your key for next quest is 4675";
+      if(window.confirm(msg)){
+        window.location.href="locations.html";
+      }
+    });
+  </script>
+</body>
+</html>
+

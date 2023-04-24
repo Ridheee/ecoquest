@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Find the Hidden Object</title>
+  <style>
+    *{
+        margin: 0;
+        align-items: center;
+        margin-top: 30px;
+        background-color: black;
+        color: white;
+        
+  
+    }
+    h1{
+        text-align: center;
+        border: 1px solid white;
+        background-color: rgb(9, 59, 71);
+    }
+    .content{
+        text-align: justify;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+        
+        font-family: monospace;
+        padding: 40px;
+        font-size: 20px;
+    }
+    .content p{
+        flex: 50%;
+        padding-right: 20px;
+    }
+    .content div{
+        flex: 50%;
+    }
+    #game {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      margin: auto;
+      
+      background: url(img/radioactive1.jpeg) no-repeat center center;
+      background-size: cover;
+    }
+    #object {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: url(img/radioactivehint.png) no-repeat center center;
+      background-size: cover;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+    <h1>RADIOACTIVE</h1>
+    <div class="content">
+    <p> "It's ridiculous that time and time again we need a radioactive cloud coming out of a nuclear power-station to 
+        remind us that atomic energy is extraordinarily dangerous."<br>
+       -Pierre Schaeffer<br>
+       This type of pollution is particularly dangerous because it can cause serious health problems, including cancer and genetic mutations. The most common sources of 
+       radioactive pollution are nuclear power plants, nuclear weapons testing, and the improper disposal of radioactive waste.
+       Preventing radioactive pollution can be done by properly disposing of radioactive waste, reducing the use of nuclear power, and improving safety measures at nuclear power plants. Governments and industry leaders
+       must work together to develop effective solutions for dealing with radioactive waste and preventing further pollution.
+        <br><br> <b>Your task is to solve the riddle and spot the hidden pollutant:<br>
+            I am a metal, heavy and dense,<br>
+            Used for power, but at what expense?<br>
+            My atoms split, my energy released,<br>
+            But my pollution leaves the world un-pleased.
+        </b>
+    </p>
+  <div id="game">
+    <div id="object"></div>
+  </div>
+</div>
+  <script>
+    // Get the game and object elements
+    var game = document.getElementById("game");
+    var object = document.getElementById("object");
+    // Generate a random x and y coordinate within the game container
+    var x = Math.floor(Math.random() * (game.offsetWidth - object.offsetWidth));
+    var y = Math.floor(Math.random() * (game.offsetHeight - object.offsetHeight));
+    // Set the object's position to the random x and y coordinate
+    object.style.left = x + "px";
+    object.style.top = y + "px";
+    // Add a click event listener to the object element
+    object.addEventListener("click", function() {
+        
+      var msg="Congratulations! You found the hidden object. Your key for next quest is 7231";
+      if(window.confirm(msg)){
+        window.location.href="locations.html";
+      }
+    });
+  </script>
+</body>
+</html>
+

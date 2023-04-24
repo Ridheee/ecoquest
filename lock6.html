@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<title>Unlock</title>
+	<style>
+        *{
+            margin: 0%;
+        }
+		body {
+			
+            text-align: justify;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            
+		}
+        .content{
+            flex: 40%;
+            margin-left: 20%;
+            align-items: center;
+        }
+        img{
+            flex: 60%;
+        }
+		input {
+			font-size: 16px;
+			padding: 8px;
+			margin-bottom: 16px;
+            color: black;
+		}
+		button {
+            
+            padding: 16px 32px;
+            font-size: 20px;
+            height: 50px;
+			background-color: rgb(9, 59, 71);
+			color: white;
+			
+			
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		/* button:hover {
+			background-color: #22143a;
+		} */
+	</style>
+</head>
+<body>
+	<div class="content"><label for="enter-key" style="font-size: 30px;">Enter key:</label><br>
+        <input type="text" id="enter-key" name="enter-key"><br>
+        <button type="button" onclick="unlock()"><i class="fas fa-lock"></i> UNLOCK</button></div>
+        <img src="img/home.png" alt="Fixing the Planet">
+
+	<script>
+        
+		function unlock() {
+			var enterKey = document.getElementById("enter-key").value;
+			if (enterKey === "7231") {
+                
+                    window.location.href="final.html";
+                
+			} else {
+				alert("Incorrect Key! You can always reattempt the last quest if needed.");
+			}
+		}
+	</script>
+</body>
+</html>

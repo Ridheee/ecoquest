@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Find the Hidden Object</title>
+  <style>
+    *{
+        margin: 0;
+        align-items: center;
+        margin-top: 30px;
+        background-color: black;
+        color: white;
+        
+  
+    }
+    h1{
+        text-align: center;
+        border: 1px solid white;
+        background-color: rgb(9, 59, 71);
+    }
+    .content{
+        text-align: justify;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+        
+        font-family: monospace;
+        padding: 40px;
+        font-size: 20px;
+    }
+    .content p{
+        flex: 50%;
+        padding-right: 20px;
+    }
+    .content div{
+        flex: 50%;
+    }
+    #game {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      margin: auto;
+      
+      background: url(img/land1.jpeg) no-repeat center center;
+      background-size: cover;
+    }
+    #object {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: url(img/landhint.png) no-repeat center center;
+      background-size: cover;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+    <h1>LAND</h1>
+    <div class="content">
+    <p> “Soil is not just a substance, soil is the soul.”<br>
+        ― Amit Kalantri, Wealth of Words<br>
+        The soil is the skin of the earth, a mantle full of scars, thousand-year-old wrinkles 
+        and more recent injuries caused both by man and nature itself. This invisible affliction harms land biodiversity and endangers health, particularly through food. Activities such as stock breeding and intensive farming use chemicals, pesticides and fertilisers that pollute the land, 
+        just as happens with heavy metals and other natural and man-made chemical substances. Some of the things we can do to improve its health include
+        properly recycling batteries, producing homemade compost and disposing of drugs in the places authorised for this purpose, 
+        encouraging a more eco-friendly model for industry, farming and stock breeding.
+        <br><br> <b>Your task is to solve the riddle and spot the hidden pollutant:<br>
+            I am small, yet mighty in power,<br>
+            But when I'm done, I'm tossed like a flower.<br>
+            I'm used in gadgets big and small,<br>
+            But my disposal can harm us all.
+        </b>
+    </p>
+  <div id="game">
+    <div id="object"></div>
+  </div>
+</div>
+  <script>
+    // Get the game and object elements
+    var game = document.getElementById("game");
+    var object = document.getElementById("object");
+    // Generate a random x and y coordinate within the game container
+    var x = Math.floor(Math.random() * (game.offsetWidth - object.offsetWidth));
+    var y = Math.floor(Math.random() * (game.offsetHeight - object.offsetHeight));
+    // Set the object's position to the random x and y coordinate
+    object.style.left = x + "px";
+    object.style.top = y + "px";
+    // Add a click event listener to the object element
+    object.addEventListener("click", function() {
+        
+      var msg="Congratulations! You found the hidden object. Your key for next quest is 9809";
+      if(window.confirm(msg)){
+        window.location.href="locations.html";
+      }
+    });
+  </script>
+</body>
+</html>
+
