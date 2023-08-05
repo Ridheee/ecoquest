@@ -8,7 +8,7 @@ There is only one possible way to solve the puzzle ,that is, to navigate the puz
 The project can be set up by downloading the all files and the opening the index.html file in your browser.
 
 Features Implemented:
-1) The puzzle contain 5 clues and 1 solutiin
+1) The puzzle contain 5 clues and 1 solution
 2) On refreshing, from either browser or website, the puzzle starts from the same step.
 
 
